@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjtb6pt8jppxj"]
+
+[ext_resource type="PackedScene" uid="uid://bss8fskay3c8w" path="res://Scenes/build_entry_widget.tscn" id="1_5wsrx"]
+[ext_resource type="Script" path="res://Scripts/build_category_widget.gd" id="1_470lq"]
+
+[node name="build_category_widget" type="VBoxContainer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -84.5
+offset_bottom = 84.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_470lq")
+
+[node name="Text_Category" type="RichTextLabel" parent="."]
+layout_mode = 2
+text = "Build Category"
+fit_content = true
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="VBox_BuildEntries" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="BuildEntry_Widget" parent="VBox_BuildEntries" instance=ExtResource("1_5wsrx")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="BuildEntry_Widget2" parent="VBox_BuildEntries" instance=ExtResource("1_5wsrx")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_bottom = 32

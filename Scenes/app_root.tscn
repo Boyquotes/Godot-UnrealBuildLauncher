@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnrpmtnaugit1"]
+
+[ext_resource type="Script" path="res://Scripts/app_root.gd" id="1_jh7pw"]
+[ext_resource type="PackedScene" uid="uid://cjtb6pt8jppxj" path="res://Scenes/build_category_widget.tscn" id="2_n8s6w"]
+
+[node name="App_Root" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jh7pw")
+
+[node name="App_Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.145098, 0.145098, 0.145098, 1)
+
+[node name="VBox_AppContent" type="VBoxContainer" parent="App_Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header_Background" type="ColorRect" parent="App_Background/VBox_AppContent"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+color = Color(0.243137, 0.243137, 0.243137, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="App_Background/VBox_AppContent"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ScrollContainer" type="ScrollContainer" parent="App_Background/VBox_AppContent/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBox_MainContent" type="VBoxContainer" parent="App_Background/VBox_AppContent/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBox_Controls" type="HBoxContainer" parent="App_Background/VBox_AppContent/MarginContainer/ScrollContainer/VBox_MainContent"]
+layout_mode = 2
+
+[node name="VBox_BuildEntries" type="VBoxContainer" parent="App_Background/VBox_AppContent/MarginContainer/ScrollContainer/VBox_MainContent"]
+layout_mode = 2
+
+[node name="build_category_widget" parent="App_Background/VBox_AppContent/MarginContainer/ScrollContainer/VBox_MainContent/VBox_BuildEntries" instance=ExtResource("2_n8s6w")]
+layout_mode = 2
+
+[node name="ColorRect_Footer" type="ColorRect" parent="App_Background/VBox_AppContent"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+color = Color(0.243137, 0.243137, 0.243137, 1)
